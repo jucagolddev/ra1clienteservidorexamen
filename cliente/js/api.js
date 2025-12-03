@@ -1,0 +1,19 @@
+const API_URL = 'http://localhost/ra1clienteservidorexmamen/servidor/api.php';
+
+async function obtenerProductos() {
+  const respuesta = await fetch(API_URL);
+  return await respuesta.json();
+}
+
+async function obtenerProducto(id) {
+  const respuesta = await fetch(`${API_URL}?id=${id}`);
+  return await respuesta.json();
+}
+
+
+async function obtenerProductosCategorias(categoria) {
+  const respuesta = await fetch(`${API_URL}?cat=${categoria}`);
+  // const respuesta = await fetch(API_URL);
+  
+  return await respuesta.json();
+}
